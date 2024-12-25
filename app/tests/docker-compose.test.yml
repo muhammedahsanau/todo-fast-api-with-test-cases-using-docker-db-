@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  test-db:
+    image: postgres:13
+    container_name: test_app_postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test_db
+    ports:
+      - "5400:5432" # Expose test DB on port 5400
+
+# start the docker PG db
+# sudo docker-compose -f app/tests/docker-compose.test.yml up -d
+
+# check if the db is running
+# sudo docker ps
+
+# stop the docker PG db
+# sudo docker-compose -f app/tests/docker-compose.test.yml down
+
+# remove the docker PG db
+# sudo docker-compose -f app/tests/docker-compose.test.yml rm
